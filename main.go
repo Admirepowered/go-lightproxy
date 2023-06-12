@@ -3,6 +3,8 @@ package main
 import (
 	"flag"
 	"fmt"
+
+	"github.com/Admirepowered/go-lightproxy/core"
 )
 
 var addr string
@@ -19,9 +21,11 @@ func main() {
 	flag.Parse()
 
 	if server == "" {
-		flag.Usage()
-		start()
+		core.Init("server", addr, password)
+		//flag.Usage()
+
 	} else {
 		fmt.Println("TTT", server)
+		core.Init(server, addr, password)
 	}
 }
