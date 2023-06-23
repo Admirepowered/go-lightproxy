@@ -2,12 +2,12 @@ package core
 
 import "fmt"
 
-func Init(server string, addr string, password string) {
+func Init(server string, addr string, password string, method string) {
 
-	fmt.Print("OK")
+	fmt.Println("OK", method)
 	if server == "server" {
-		Server(addr, password)
+		Server(addr, password, method)
 	} else {
-		Clent(server, addr, password)
+		Clent(server, addr, password, method)
 	}
 }

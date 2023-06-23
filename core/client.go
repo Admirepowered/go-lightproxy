@@ -1,6 +1,7 @@
 package core
 
 import (
+	"fmt"
 	"log"
 	"net"
 
@@ -16,10 +17,11 @@ func handle_conn(conn net.Conn) {
 	}
 	if headerBuf[0] == 5 {
 		method, remote, port := parse.Paseconnect(conn)
+		fmt.Println(method, remote, port)
 	}
 }
 
-func Clent(connet string, addr string, password string) {
+func Clent(connet string, addr string, password string, method string) {
 
 	listener, err := net.Listen("tcp", addr)
 	if err != nil {

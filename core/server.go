@@ -17,7 +17,7 @@ func handle_conn_server(conn net.Conn) {
 	//	parse.Paseconnect(conn)
 	//}
 }
-func Server(addr string, password string) {
+func Server(addr string, password string, method string) {
 	listener, err := net.Listen("tcp", addr)
 	if err != nil {
 		log.Fatal(err)
